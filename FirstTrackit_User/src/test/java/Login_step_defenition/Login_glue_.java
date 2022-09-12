@@ -1,15 +1,24 @@
 package Login_step_defenition;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Login_glue_ {
+	String baseurl = "https://ftuserdev.tokenomicsdaily.com/";
 
 
 @Given("User Get landed on to login page")
 public void user_get_landed_on_to_login_page() {
+	
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver = new ChromeDriver();
+	driver.get(baseurl);
     System.out.println("1");
 }
 
